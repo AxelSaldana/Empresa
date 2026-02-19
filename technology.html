@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología | Studio AR Arch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tech-hero {
+            padding-top: 180px;
+            background: radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        .tech-item {
+            padding: 2.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stack-list {
+            margin-top: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: center;
+        }
+
+        .stack-item {
+            text-align: center;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .stack-item:hover {
+            opacity: 1;
+        }
+
+        .stack-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .code-preview {
+            margin-top: 6rem;
+            padding: 2.5rem;
+            background: #0d0d0d;
+            border-radius: 1.5rem;
+            border: 1px solid var(--card-border);
+            font-family: 'Courier New', Courier, monospace;
+            color: #4ade80;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html">Proyectos</a></li>
+                    <li><a href="technology.html" class="active">Tecnología</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="contact.html">Nosotros</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Contacto &rarr;</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tech-hero">
+            <div class="container">
+                <div class="badge">Stack Tecnológico</div>
+                <h1>Nuestra <span>Infraestructura</span></h1>
+                <p style="color: var(--text-muted); max-width: 800px;">Utilizamos las mejores herramientas de la
+                    industria para garantizar un rendimiento óptimo, estabilidad y una fidelidad visual inigualable en
+                    cada proyecto.</p>
+
+                <div class="tech-grid">
+                    <div class="glass tech-item">
+                        <h3>Unity 3D Engine</h3>
+                        <p style="color: var(--text-muted);">El corazón de nuestras experiencias interactivas. Permite
+                            renderizado de alta fidelidad y física realista tanto en dispositivos móviles como en
+                            plataformas de escritorio.</p>
+                    </div>
+                    <div class="glass tech-item">
+                        <h3>.NET Core / C#</h3>
+                        <p style="color: var(--text-muted);">Infraestructura robusta para el manejo de datos,
+                            autenticación segura y lógica de negocio compleja, asegurando escalabilidad y
+                            mantenibilidad.</p>
+                    </div>
+                    <div class="glass tech-item">
+                        <h3>ARCore & ARKit</h3>
+                        <p style="color: var(--text-muted);">Integración nativa con los principales ecosistemas de
+                            realidad aumentada, permitiendo una detección de entorno y seguimiento precisos.</p>
+                    </div>
+                </div>
+
+                <div class="code-preview">
+                    <span style="color: #6366f1;">// Inicializando renderizado inmersivo</span><br>
+                    <span style="color: #f43f5e;">public class</span> <span
+                        style="color: #fbbf24;">ArchitectureViewer</span> : <span
+                        style="color: #fbbf24;">MonoBehaviour</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;[<span style="color: #fbbf24;">SerializeField</span>] <span
+                        style="color: #f43f5e;">private</span> <span style="color: #fbbf24;">RenderingSpecs</span>
+                    _specs;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">void</span> Start() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        style="color: #fbbf24;">ARCloud</span>.Initialize(_specs.precisionId);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #fbbf24;">Debug</span>.Log(<span
+                        style="color: #4ade80;">"Engine Ready: 4K Inmersive Render Active"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
+
+                <div class="stack-list">
+                    <div class="stack-item"><span>Firebase</span></div>
+                    <div class="stack-item"><span>Azure Cloud</span></div>
+                    <div class="stack-item"><span>WebGL</span></div>
+                    <div class="stack-item"><span>OpenCV</span></div>
+                    <div class="stack-item"><span>TensorFlow</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 60px 0; border-top: 1px solid var(--card-border);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2024 AR Real Estate Specialist. Todos los
+                    derechos reservados.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: var(--text-muted);">LinkedIn</a>
+                    <a href="#" style="color: var(--text-muted);">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

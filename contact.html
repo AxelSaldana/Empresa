@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Nosotros | Studio AR Arch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-hero {
+            padding-top: 180px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-form-wrapper {
+            padding: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 0.5rem;
+            color: white;
+            outline: none;
+            transition: var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .about-section {
+            padding: 4rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-item .icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html">Proyectos</a></li>
+                    <li><a href="technology.html">Tecnología</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="contact.html" class="active">Nosotros</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Contacto &rarr;</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <div class="badge">Hablemos</div>
+                <h1>¿Listo para revolucionar <span>sus ventas?</span></h1>
+                <p style="color: var(--text-muted); max-width: 800px;">Agenda hoy una consultoría gratuita y descubre
+                    cómo nuestras soluciones de AR pueden transformar su proyecto.</p>
+
+                <div class="contact-layout">
+                    <div class="glass contact-form-wrapper">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" placeholder="juan@empresa.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="project">Tipo de Proyecto</label>
+                                <input type="text" id="project" placeholder="Ej: Residencial Arboleda">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" rows="5" placeholder="Cuéntanos sobre su visión..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; justify-content: center;">Enviar Correo</button>
+                        </form>
+                    </div>
+
+                    <div class="glass about-section">
+                        <h3>Studio AR Arch</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 3rem;">Somos expertos en visualización
+                            arquitectónica avanzada y realidad aumentada. Nuestra misión es acortar la brecha entre la
+                            imaginación arquitectónica y la realidad tangible.</p>
+
+                        <div class="info-item">
+                            <div class="icon">📍</div>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p style="color: var(--text-muted);">Avenida de la Innovación 450, Distrito Tecnológico.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon">✉️</div>
+                            <div>
+                                <h4>Contacto Directo</h4>
+                                <p style="color: var(--text-muted);">hola@studioar-arch.digital<br>+52 (55) 1234 5678
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon">🕒</div>
+                            <div>
+                                <h4>Horario</h4>
+                                <p style="color: var(--text-muted);">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 60px 0; border-top: 1px solid var(--card-border);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2024 AR Real Estate Specialist. Todos los
+                    derechos reservados.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: var(--text-muted);">LinkedIn</a>
+                    <a href="#" style="color: var(--text-muted);">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

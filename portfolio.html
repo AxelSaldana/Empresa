@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Studio AR Arch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .portfolio-hero {
+            padding-top: 180px;
+            margin-bottom: 4rem;
+        }
+
+        .filter-nav {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html" class="active">Proyectos</a></li>
+                    <li><a href="technology.html">Tecnología</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="contact.html">Nosotros</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Contacto &rarr;</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-hero">
+            <div class="container">
+                <h1>Architecting <span>Realities</span></h1>
+                <p style="color: var(--text-muted); max-width: 700px; margin-bottom: 3rem;">Bridging the gap between
+                    architectural vision and immersive experience. We specialize in high-end digital architecture and AR
+                    solutions for the world's most exclusive real estate portfolios.</p>
+
+                <div class="filter-nav">
+                    <button class="filter-btn active">Todos</button>
+                    <button class="filter-btn">Realidad Aumentada</button>
+                    <button class="filter-btn">Web</button>
+                    <button class="filter-btn">Desktop</button>
+                </div>
+
+                <div class="portfolio-grid">
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+                            alt="Emerald Coast Penthouse">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Emerald Coast Penthouse</h3>
+                                <p>Visualización Realista 3D</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800"
+                            alt="Glass Pavilion View">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Glass Pavilion View</h3>
+                                <p>Experiencia de Inmersión AR</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"
+                            alt="Corporate HQ Dashboard">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Corporate HQ Dashboard</h3>
+                                <p>Plataforma de Gestión (.NET)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1600607687940-4e524cb35a39?auto=format&fit=crop&q=80&w=800"
+                            alt="The Heights AR">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>The Heights AR</h3>
+                                <p>Recorrido Virtual 360</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=800"
+                            alt="Smart Loft Configurator">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Smart Loft Configurator</h3>
+                                <p>Aplicación de Personalización</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800"
+                            alt="Kitchen AR Portal">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Kitchen AR Portal</h3>
+                                <p>WebAR Integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: rgba(255,255,255,0.02); padding: 60px 0;">
+            <div class="container"
+                style="display: flex; justify-content: space-between; align-items: center; opacity: 0.5;">
+                <span
+                    style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Engineered
+                    with Precision</span>
+                <div style="display: flex; gap: 3rem; font-weight: 600; font-size: 0.9rem;">
+                    <span>Unity 3D</span>
+                    <span>.NET Core</span>
+                    <span>ARCore</span>
+                    <span>WebGL</span>
+                    <span>Azure</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 60px 0; border-top: 1px solid var(--card-border);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2024 AR Real Estate Specialist. Todos los
+                    derechos reservados.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: var(--text-muted);">LinkedIn</a>
+                    <a href="#" style="color: var(--text-muted);">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

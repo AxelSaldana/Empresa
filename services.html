@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Studio AR Arch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .services-hero {
+            padding-top: 180px;
+            text-align: center;
+            background: linear-gradient(to bottom, #0a0a0a, #050505);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            padding: 3rem;
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .service-card .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .cta-section {
+            margin: 100px 0;
+            padding: 5rem;
+            border-radius: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html">Proyectos</a></li>
+                    <li><a href="technology.html">Tecnología</a></li>
+                    <li><a href="services.html" class="active">Servicios</a></li>
+                    <li><a href="contact.html">Nosotros</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Contacto &rarr;</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="services-hero">
+            <div class="container">
+                <div class="badge">Excelencia Digital</div>
+                <h1>Servicios <span>Especializados</span></h1>
+                <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">Fusionamos la arquitectura
+                    tradicional con las tecnologías más avanzadas para crear experiencias inmobiliarias inmersivas de
+                    alto nivel.</p>
+
+                <div class="services-grid">
+                    <div class="glass service-card">
+                        <div class="icon-wrapper">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Realidad Aumentada Arquitectónica</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Visualización inmersiva de proyectos
+                            antes de la construcción. Permita que sus clientes caminen por su futuro hogar utilizando
+                            tecnología AR de última generación.</p>
+                        <a href="#" style="color: var(--primary-color); font-weight: 600;">Saber más &rarr;</a>
+                    </div>
+
+                    <div class="glass service-card">
+                        <div class="icon-wrapper">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Aplicaciones Personalizadas (.NET)</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Soluciones robustas y escalables para
+                            la gestión de activos y sistemas críticos. Arquitectura de software diseñada para el alto
+                            rendimiento empresarial.</p>
+                        <a href="#" style="color: var(--primary-color); font-weight: 600;">Saber más &rarr;</a>
+                    </div>
+
+                    <div class="glass service-card">
+                        <div class="icon-wrapper">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Plataformas Web Inmobiliarias</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Experiencias digitales premium para el
+                            sector Real Estate. Diseñamos interfaces que cautivan y convierten, optimizadas para
+                            visualización de lujo.</p>
+                        <a href="#" style="color: var(--primary-color); font-weight: 600;">Saber más &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="cta-section">
+                    <h2>¿Listo para transformar su próximo proyecto?</h2>
+                    <p>Nuestro equipo de especialistas está listo para llevar su visión al siguiente nivel digital.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <a href="contact.html" class="btn"
+                            style="background: white; color: var(--primary-color);">Contactar Especialista</a>
+                        <a href="portfolio.html" class="btn btn-outline" style="border-color: white;">Ver Portafolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 60px 0; border-top: 1px solid var(--card-border);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" class="logo">
+                    <div class="logo-box"></div>
+                    Studio AR <span>Arch</span>
+                </a>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2024 AR Real Estate Specialist. Todos los
+                    derechos reservados.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: var(--text-muted);">LinkedIn</a>
+                    <a href="#" style="color: var(--text-muted);">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
