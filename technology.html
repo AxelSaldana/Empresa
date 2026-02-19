@@ -1,159 +1,214 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnología | Studio AR Arch</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tecnología de Vanguardia | Digital Arch & AR</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#258cf4",
+                        "accent-blue": "#3b82f6",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .tech-hero {
-            padding-top: 180px;
-            background: radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+        .stack-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stack-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(37, 140, 244, 0.3);
         }
 
         .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 5rem;
-        }
-
-        .tech-item {
-            padding: 2.5rem;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .stack-list {
-            margin-top: 4rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            justify-content: center;
-        }
-
-        .stack-item {
-            text-align: center;
-            opacity: 0.6;
-            transition: opacity 0.3s;
-        }
-
-        .stack-item:hover {
-            opacity: 1;
-        }
-
-        .stack-item i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .code-preview {
-            margin-top: 6rem;
-            padding: 2.5rem;
-            background: #0d0d0d;
-            border-radius: 1.5rem;
-            border: 1px solid var(--card-border);
-            font-family: 'Courier New', Courier, monospace;
-            color: #4ade80;
-            overflow-x: auto;
+            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
         }
     </style>
 </head>
 
-<body>
-    <header class="header-scrolled">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <div class="logo-box"></div>
-                    Studio AR <span>Arch</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="portfolio.html">Proyectos</a></li>
-                    <li><a href="technology.html" class="active">Tecnología</a></li>
-                    <li><a href="services.html">Servicios</a></li>
-                    <li><a href="contact.html">Nosotros</a></li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">Contacto &rarr;</a>
+<body class="bg-background-dark font-display text-slate-100 antialiased overflow-x-hidden">
+
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+                <div class="bg-primary p-2 rounded-lg text-white">
+                    <span class="material-symbols-outlined text-2xl">architecture</span>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Studio AR <span class="text-primary">Arch</span></h2>
+            </a>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="portfolio.html">Portafolio</a>
+                <a class="text-sm font-medium text-primary border-b-2 border-primary"
+                    href="technology.html">Tecnología</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="services.html">Servicios</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contacto</a>
             </nav>
+            <div class="flex items-center gap-4">
+                <a href="contact.html"
+                    class="hidden sm:flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all items-center gap-2">
+                    <span>Contacto</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="tech-hero">
-            <div class="container">
-                <div class="badge">Stack Tecnológico</div>
-                <h1>Nuestra <span>Infraestructura</span></h1>
-                <p style="color: var(--text-muted); max-width: 800px;">Utilizamos las mejores herramientas de la
-                    industria para garantizar un rendimiento óptimo, estabilidad y una fidelidad visual inigualable en
-                    cada proyecto.</p>
+    <main class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col items-start gap-6 max-w-3xl mb-24">
+                <span
+                    class="px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase">PropTech
+                    Advanced Stack</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+                    El motor detrás de la <span class="text-primary">realidad</span>
+                </h1>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Utilizamos las herramientas más potentes del mercado para garantizar un rendimiento óptimo, realismo
+                    fotográfico y escalabilidad industrial.
+                </p>
+            </div>
 
-                <div class="tech-grid">
-                    <div class="glass tech-item">
-                        <h3>Unity 3D Engine</h3>
-                        <p style="color: var(--text-muted);">El corazón de nuestras experiencias interactivas. Permite
-                            renderizado de alta fidelidad y física realista tanto en dispositivos móviles como en
-                            plataformas de escritorio.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+                <div class="stack-card p-10 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span class="material-symbols-outlined text-8xl">view_in_ar</span>
                     </div>
-                    <div class="glass tech-item">
-                        <h3>.NET Core / C#</h3>
-                        <p style="color: var(--text-muted);">Infraestructura robusta para el manejo de datos,
-                            autenticación segura y lógica de negocio compleja, asegurando escalabilidad y
-                            mantenibilidad.</p>
-                    </div>
-                    <div class="glass tech-item">
-                        <h3>ARCore & ARKit</h3>
-                        <p style="color: var(--text-muted);">Integración nativa con los principales ecosistemas de
-                            realidad aumentada, permitiendo una detección de entorno y seguimiento precisos.</p>
+                    <h3 class="text-3xl font-bold mb-6 text-white">Visual Reality Engine</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-primary/10 rounded-xl text-primary font-bold">UE5</div>
+                            <div>
+                                <p class="font-bold text-white">Unreal Engine 5</p>
+                                <p class="text-sm text-slate-500">Iluminación global en tiempo real (Lumen) y geometría
+                                    infinita (Nanite).</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-primary/10 rounded-xl text-primary font-bold">AR</div>
+                            <div>
+                                <p class="font-bold text-white">ARKit / ARCore</p>
+                                <p class="text-sm text-slate-500">Integración perfecta en cualquier dispositivo móvil
+                                    moderno.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="code-preview">
-                    <span style="color: #6366f1;">// Inicializando renderizado inmersivo</span><br>
-                    <span style="color: #f43f5e;">public class</span> <span
-                        style="color: #fbbf24;">ArchitectureViewer</span> : <span
-                        style="color: #fbbf24;">MonoBehaviour</span> {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;[<span style="color: #fbbf24;">SerializeField</span>] <span
-                        style="color: #f43f5e;">private</span> <span style="color: #fbbf24;">RenderingSpecs</span>
-                    _specs;<br><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">void</span> Start() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                        style="color: #fbbf24;">ARCloud</span>.Initialize(_specs.precisionId);<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #fbbf24;">Debug</span>.Log(<span
-                        style="color: #4ade80;">"Engine Ready: 4K Inmersive Render Active"</span>);<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                    }
-                </div>
-
-                <div class="stack-list">
-                    <div class="stack-item"><span>Firebase</span></div>
-                    <div class="stack-item"><span>Azure Cloud</span></div>
-                    <div class="stack-item"><span>WebGL</span></div>
-                    <div class="stack-item"><span>OpenCV</span></div>
-                    <div class="stack-item"><span>TensorFlow</span></div>
+                <div class="stack-card p-10 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span class="material-symbols-outlined text-8xl">precision_manufacturing</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-6 text-white">Data & Systems</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-accent-blue/10 rounded-xl text-accent-blue font-bold">.NET</div>
+                            <div>
+                                <p class="font-bold text-white">Backend de Alto Rendimiento</p>
+                                <p class="text-sm text-slate-500">Consultas de datos milimétricas y gestión de activos
+                                    volumétricos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-accent-blue/10 rounded-xl text-accent-blue font-bold">AI</div>
+                            <div>
+                                <p class="font-bold text-white">Optimización por IA</p>
+                                <p class="text-sm text-slate-500">Deep learning para el refinamiento de texturas y
+                                    predicción de iluminación.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer style="padding: 60px 0; border-top: 1px solid var(--card-border);">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="index.html" class="logo">
-                    <div class="logo-box"></div>
-                    Studio AR <span>Arch</span>
-                </a>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2024 AR Real Estate Specialist. Todos los
-                    derechos reservados.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#" style="color: var(--text-muted);">LinkedIn</a>
-                    <a href="#" style="color: var(--text-muted);">Instagram</a>
+            <div class="py-20 border-t border-white/5">
+                <h4 class="text-center text-slate-500 uppercase tracking-[0.3em] font-bold text-xs mb-12">Integraciones
+                    de Nivel Industrial</h4>
+                <div
+                    class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale group hover:opacity-100 transition-all">
+                    <span class="text-2xl font-bold">AUTODESK</span>
+                    <span class="text-2xl font-bold">TRIMBLE</span>
+                    <span class="text-2xl font-bold">NVIDIA</span>
+                    <span class="text-2xl font-bold">BENTLEY</span>
                 </div>
             </div>
         </div>
+    </main>
+
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-slate-400">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-primary size-6">
+                        <span class="material-symbols-outlined text-2xl">architecture</span>
+                    </div>
+                    <h2 class="text-white text-lg font-bold tracking-tight">Studio AR <span
+                            class="text-primary">Arch</span></h2>
+                </div>
+                <p class="text-sm leading-relaxed">Expertos en visualización arquitectónica avanzada y realidad
+                    aumentada para proyectos de alto impacto.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Navegación</h5>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="portfolio.html">Portafolio</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="services.html">Servicios</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Tecnología</h5>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Realidad Aumentada</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Renders 3D</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Tours Virtuales</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Drones FPV</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Boletín</h5>
+                <p class="text-sm mb-4">Reciba las últimas tendencias en PropTech.</p>
+                <div class="flex gap-2">
+                    <input
+                        class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-primary"
+                        placeholder="Email" type="email" />
+                    <button class="bg-primary text-white p-2 rounded-lg">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs border-t border-white/5 pt-10">
+            <p>© 2024 Studio AR Arch Specialist. Todos los derechos reservados.</p>
+            <div class="flex gap-8">
+                <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+                <a class="hover:text-white transition-colors" href="#">Privacidad</a>
+            </div>
+        </div>
     </footer>
-    <script src="js/main.js"></script>
+
 </body>
 
 </html>

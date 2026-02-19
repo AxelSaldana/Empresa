@@ -1,180 +1,220 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios | Studio AR Arch</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Servicios Especializados | Digital Architecture & AR</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#258cf4",
+                        "accent-violet": "#8b5cf6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .services-hero {
-            padding-top: 180px;
-            text-align: center;
-            background: linear-gradient(to bottom, #0a0a0a, #050505);
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            padding: 3rem;
-            transition: var(--transition-base);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-        }
-
-        .service-card .icon-wrapper {
-            width: 60px;
-            height: 60px;
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-
-        .cta-section {
-            margin: 100px 0;
-            padding: 5rem;
-            border-radius: 2rem;
-            background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(37, 140, 244, 0.4);
+            transform: translateY(-8px);
         }
     </style>
 </head>
 
-<body>
-    <header class="header-scrolled">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <div class="logo-box"></div>
-                    Studio AR <span>Arch</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="portfolio.html">Proyectos</a></li>
-                    <li><a href="technology.html">Tecnología</a></li>
-                    <li><a href="services.html" class="active">Servicios</a></li>
-                    <li><a href="contact.html">Nosotros</a></li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">Contacto &rarr;</a>
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+                <div class="bg-primary p-2 rounded-lg text-white">
+                    <span class="material-symbols-outlined text-2xl">architecture</span>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Studio AR <span class="text-primary">Arch</span></h2>
+            </a>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="portfolio.html">Portafolio</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors"
+                    href="technology.html">Tecnología</a>
+                <a class="text-sm font-medium text-primary border-b-2 border-primary" href="services.html">Servicios</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contacto</a>
             </nav>
+            <div class="flex items-center gap-4">
+                <a href="contact.html"
+                    class="hidden sm:flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all items-center gap-2">
+                    <span>Contacto</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="services-hero">
-            <div class="container">
-                <div class="badge">Excelencia Digital</div>
-                <h1>Servicios <span>Especializados</span></h1>
-                <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">Fusionamos la arquitectura
-                    tradicional con las tecnologías más avanzadas para crear experiencias inmobiliarias inmersivas de
-                    alto nivel.</p>
+    <main class="flex-1 px-6 md:px-20 py-24 md:py-32 relative">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20">
+                <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Excelencia
+                    Digital</span>
+                <h1 class="text-4xl md:text-6xl font-bold dark:text-white text-slate-900 mb-6 tracking-tight">
+                    Servicios <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-violet">Especializados</span>
+                </h1>
+                <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Fusionamos la arquitectura tradicional con las tecnologías más avanzadas para crear experiencias
+                    inmobiliarias inmersivas de alto nivel.
+                </p>
+            </div>
 
-                <div class="services-grid">
-                    <div class="glass service-card">
-                        <div class="icon-wrapper">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Realidad Aumentada Arquitectónica</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Visualización inmersiva de proyectos
-                            antes de la construcción. Permita que sus clientes caminen por su futuro hogar utilizando
-                            tecnología AR de última generación.</p>
-                        <a href="#" style="color: var(--primary-color); font-weight: 600;">Saber más &rarr;</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card group relative p-8 rounded-2xl flex flex-col items-start overflow-hidden">
+                    <div class="mb-8 p-4 rounded-xl bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined text-4xl">domain</span>
                     </div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Realidad Aumentada Arquitectónica
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 flex-1">
+                        Visualización inmersiva de proyectos antes de la construcción. Permita que sus clientes caminen
+                        por su futuro hogar utilizando tecnología AR de última generación.
+                    </p>
+                    <a class="flex items-center gap-2 text-primary font-semibold group/link" href="#">
+                        Saber más <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                    </a>
+                </div>
 
-                    <div class="glass service-card">
-                        <div class="icon-wrapper">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Aplicaciones Personalizadas (.NET)</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Soluciones robustas y escalables para
-                            la gestión de activos y sistemas críticos. Arquitectura de software diseñada para el alto
-                            rendimiento empresarial.</p>
-                        <a href="#" style="color: var(--primary-color); font-weight: 600;">Saber más &rarr;</a>
+                <div class="glass-card group relative p-8 rounded-2xl flex flex-col items-start overflow-hidden">
+                    <div class="mb-8 p-4 rounded-xl bg-accent-violet/10 text-accent-violet">
+                        <span class="material-symbols-outlined text-4xl">terminal</span>
                     </div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Aplicaciones Personalizadas
+                        (.NET)</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 flex-1">
+                        Soluciones robustas y escalables para la gestión de activos y sistemas críticos. Arquitectura de
+                        software diseñada para el alto rendimiento empresarial.
+                    </p>
+                    <a class="flex items-center gap-2 text-accent-violet font-semibold group/link" href="#">
+                        Saber más <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                    </a>
+                </div>
 
-                    <div class="glass service-card">
-                        <div class="icon-wrapper">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>Plataformas Web Inmobiliarias</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Experiencias digitales premium para el
-                            sector Real Estate. Diseñamos interfaces que cautivan y convierten, optimizadas para
-                            visualización de lujo.</p>
-                        <a href="#" style="color: var(--primary-color); font-weight: 600;">Saber más &rarr;</a>
+                <div class="glass-card group relative p-8 rounded-2xl flex flex-col items-start overflow-hidden">
+                    <div class="mb-8 p-4 rounded-xl bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined text-4xl">language</span>
                     </div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Plataformas Web Inmobiliarias
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 flex-1">
+                        Experiencias digitales premium para el sector Real Estate. Diseñamos interfaces que cautivan y
+                        convierten, optimizadas para la visualización de lujo.
+                    </p>
+                    <a class="flex items-center gap-2 text-primary font-semibold group/link" href="#">
+                        Saber más <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <section>
-            <div class="container">
-                <div class="cta-section">
-                    <h2>¿Listo para transformar su próximo proyecto?</h2>
-                    <p>Nuestro equipo de especialistas está listo para llevar su visión al siguiente nivel digital.</p>
-                    <div style="display: flex; gap: 1rem; justify-content: center;">
-                        <a href="contact.html" class="btn"
-                            style="background: white; color: var(--primary-color);">Contactar Especialista</a>
-                        <a href="portfolio.html" class="btn btn-outline" style="border-color: white;">Ver Portafolio</a>
+            <div
+                class="mt-24 p-12 rounded-3xl bg-gradient-to-br from-primary/20 via-background-dark to-accent-violet/20 border border-primary/20 text-center relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold text-white mb-4">¿Listo para transformar su próximo proyecto?</h2>
+                    <p class="text-slate-300 mb-8 max-w-xl mx-auto">Nuestro equipo de especialistas está listo para
+                        llevar su visión al siguiente nivel digital.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="contact.html"
+                            class="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-10 rounded-xl transition-all shadow-lg shadow-primary/20">
+                            Contactar Especialista
+                        </a>
+                        <a href="portfolio.html"
+                            class="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-xl border border-white/20 backdrop-blur-sm transition-all">
+                            Ver Portafolio
+                        </a>
                     </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer style="padding: 60px 0; border-top: 1px solid var(--card-border);">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="index.html" class="logo">
-                    <div class="logo-box"></div>
-                    Studio AR <span>Arch</span>
-                </a>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2024 AR Real Estate Specialist. Todos los
-                    derechos reservados.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#" style="color: var(--text-muted);">LinkedIn</a>
-                    <a href="#" style="color: var(--text-muted);">Instagram</a>
                 </div>
             </div>
         </div>
+    </main>
+
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-slate-400">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-primary size-6">
+                        <span class="material-symbols-outlined text-2xl">architecture</span>
+                    </div>
+                    <h2 class="text-white text-lg font-bold tracking-tight">Studio AR <span
+                            class="text-primary">Arch</span></h2>
+                </div>
+                <p class="text-sm leading-relaxed">Expertos en visualización arquitectónica avanzada y realidad
+                    aumentada para proyectos de alto impacto.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Navegación</h5>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="portfolio.html">Portafolio</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="services.html">Servicios</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Tecnología</h5>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Realidad Aumentada</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Renders 3D</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Tours Virtuales</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Drones FPV</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Boletín</h5>
+                <p class="text-sm mb-4">Reciba las últimas tendencias en PropTech.</p>
+                <div class="flex gap-2">
+                    <input
+                        class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-primary"
+                        placeholder="Email" type="email" />
+                    <button class="bg-primary text-white p-2 rounded-lg">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs border-t border-white/5 pt-10">
+            <p>© 2024 Studio AR Arch Specialist. Todos los derechos reservados.</p>
+            <div class="flex gap-8">
+                <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+                <a class="hover:text-white transition-colors" href="#">Privacidad</a>
+            </div>
+        </div>
     </footer>
-    <script src="js/main.js"></script>
+
 </body>
 
 </html>

@@ -1,189 +1,224 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto y Nosotros | Studio AR Arch</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contacto | Studio AR Arch</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#258cf4",
+                        "background-dark": "#050505",
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .contact-hero {
-            padding-top: 180px;
+        .form-glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            margin-top: 4rem;
-        }
-
-        .contact-form-wrapper {
-            padding: 3rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
+        .input-dark {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--card-border);
-            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-dark:focus {
+            border-color: #258cf4;
+            background: rgba(37, 140, 244, 0.05);
             outline: none;
-            transition: var(--transition-base);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary-color);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .about-section {
-            padding: 4rem;
-        }
-
-        .info-item {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .info-item .icon {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 1024px) {
-            .contact-layout {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact-form-wrapper {
-                padding: 2rem;
-            }
         }
     </style>
 </head>
 
-<body>
-    <header class="header-scrolled">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <div class="logo-box"></div>
-                    Studio AR <span>Arch</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="portfolio.html">Proyectos</a></li>
-                    <li><a href="technology.html">Tecnología</a></li>
-                    <li><a href="services.html">Servicios</a></li>
-                    <li><a href="contact.html" class="active">Nosotros</a></li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">Contacto &rarr;</a>
+<body class="bg-background-dark font-['Space_Grotesk'] text-slate-100 min-h-screen flex flex-col">
+
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+                <div class="bg-primary p-2 rounded-lg text-white">
+                    <span class="material-symbols-outlined text-2xl">architecture</span>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Studio AR <span class="text-primary">Arch</span></h2>
+            </a>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="portfolio.html">Portafolio</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors"
+                    href="technology.html">Tecnología</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="services.html">Servicios</a>
+                <a class="text-sm font-medium text-primary border-b-2 border-primary" href="contact.html">Contacto</a>
             </nav>
+            <div class="flex items-center gap-4">
+                <a href="contact.html"
+                    class="hidden sm:flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all items-center gap-2">
+                    <span>Contacto</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="contact-hero">
-            <div class="container">
-                <div class="badge">Hablemos</div>
-                <h1>¿Listo para revolucionar <span>sus ventas?</span></h1>
-                <p style="color: var(--text-muted); max-width: 800px;">Agenda hoy una consultoría gratuita y descubre
-                    cómo nuestras soluciones de AR pueden transformar su proyecto.</p>
+    <main class="flex-1 flex items-center justify-center pt-24 pb-12 px-6 relative overflow-hidden">
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] bg-primary/20 blur-[150px] rounded-full">
+        </div>
 
-                <div class="contact-layout">
-                    <div class="glass contact-form-wrapper">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Nombre Completo</label>
-                                <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Correo Electrónico</label>
-                                <input type="email" id="email" placeholder="juan@empresa.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="project">Tipo de Proyecto</label>
-                                <input type="text" id="project" placeholder="Ej: Residencial Arboleda">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" rows="5" placeholder="Cuéntanos sobre su visión..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary"
-                                style="width: 100%; justify-content: center;">Enviar Correo</button>
-                        </form>
+        <div class="max-w-5xl w-full grid lg:grid-cols-2 gap-16 relative z-10">
+            <div class="flex flex-col justify-center gap-8">
+                <div>
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">Vamos a crear <br /><span
+                            class="text-primary underline decoration-primary/30 underline-offset-8">algo
+                            brillante</span></h1>
+                    <p class="text-slate-400 text-lg leading-relaxed">Descubra cómo nuestra tecnología AR y
+                        visualización avanzada puede potenciar su marca y ventas.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div
+                        class="flex items-start gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group cursor-pointer">
+                        <div
+                            class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined">mail</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Escríbanos</p>
+                            <p class="text-white font-bold">contacto@studioar.com</p>
+                        </div>
                     </div>
-
-                    <div class="glass about-section">
-                        <h3>Studio AR Arch</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 3rem;">Somos expertos en visualización
-                            arquitectónica avanzada y realidad aumentada. Nuestra misión es acortar la brecha entre la
-                            imaginación arquitectónica y la realidad tangible.</p>
-
-                        <div class="info-item">
-                            <div class="icon">📍</div>
-                            <div>
-                                <h4>Ubicación</h4>
-                                <p style="color: var(--text-muted);">Avenida de la Innovación 450, Distrito Tecnológico.
-                                </p>
-                            </div>
+                    <div
+                        class="flex items-start gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors group cursor-pointer">
+                        <div
+                            class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined">phone_iphone</span>
                         </div>
-
-                        <div class="info-item">
-                            <div class="icon">✉️</div>
-                            <div>
-                                <h4>Contacto Directo</h4>
-                                <p style="color: var(--text-muted);">hola@studioar-arch.digital<br>+52 (55) 1234 5678
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="icon">🕒</div>
-                            <div>
-                                <h4>Horario</h4>
-                                <p style="color: var(--text-muted);">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                            </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Llámenos</p>
+                            <p class="text-white font-bold">+34 900 123 456</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="form-glass p-10 rounded-[2.5rem] shadow-2xl">
+                <form class="space-y-6" id="contactForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase ml-1">Proyecto</label>
+                            <input class="input-dark w-full px-5 py-4 rounded-xl" placeholder="Edificio Prisma"
+                                required="" type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase ml-1">Empresa</label>
+                            <input class="input-dark w-full px-5 py-4 rounded-xl" placeholder="Real Estate S.A."
+                                type="text" />
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase ml-1">Email Corporativo</label>
+                        <input class="input-dark w-full px-5 py-4 rounded-xl" placeholder="arquitecto@empresa.com"
+                            required="" type="email" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase ml-1">¿Cómo podemos ayudar?</label>
+                        <textarea class="input-dark w-full px-5 py-4 rounded-xl min-h-[150px]"
+                            placeholder="Deseamos implementar AR en nuestro showroom de ventas..."
+                            required=""></textarea>
+                    </div>
+                    <button
+                        class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-5 rounded-2xl transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3 group"
+                        type="submit">
+                        Enviar Propuesta
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                    </button>
+                </form>
+            </div>
+        </div>
     </main>
 
-    <footer style="padding: 60px 0; border-top: 1px solid var(--card-border);">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="index.html" class="logo">
-                    <div class="logo-box"></div>
-                    Studio AR <span>Arch</span>
-                </a>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2024 AR Real Estate Specialist. Todos los
-                    derechos reservados.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#" style="color: var(--text-muted);">LinkedIn</a>
-                    <a href="#" style="color: var(--text-muted);">Instagram</a>
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-slate-400">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-primary size-6">
+                        <span class="material-symbols-outlined text-2xl">architecture</span>
+                    </div>
+                    <h2 class="text-white text-lg font-bold tracking-tight">Studio AR <span
+                            class="text-primary">Arch</span></h2>
+                </div>
+                <p class="text-sm leading-relaxed">Expertos en visualización arquitectónica avanzada y realidad
+                    aumentada para proyectos de alto impacto.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Navegación</h5>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="portfolio.html">Portafolio</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="services.html">Servicios</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Tecnología</h5>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Realidad Aumentada</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Renders 3D</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Tours Virtuales</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Drones FPV</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6">Boletín</h5>
+                <p class="text-sm mb-4">Reciba las últimas tendencias en PropTech.</p>
+                <div class="flex gap-2">
+                    <input
+                        class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-primary"
+                        placeholder="Email" type="email" />
+                    <button class="bg-primary text-white p-2 rounded-lg">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
                 </div>
             </div>
         </div>
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs border-t border-white/5 pt-10">
+            <p>© 2024 Studio AR Arch Specialist. Todos los derechos reservados.</p>
+            <div class="flex gap-8">
+                <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+                <a class="hover:text-white transition-colors" href="#">Privacidad</a>
+            </div>
+        </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = 'Enviando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '¡Enviado!';
+                btn.style.background = '#10b981';
+                e.target.reset();
+            }, 1500);
+        });
+    </script>
 </body>
 
 </html>
