@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lamborghini Aventador SVJ | Studio AR</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#258cf4",
+                        "lamborghini-yellow": "#facc15",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .stats-label {
+            color: #666;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .stats-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .description-label {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .description-text {
+            color: #999;
+            font-size: 0.85rem;
+            max-width: 350px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .price-label {
+            color: #666;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .price-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .configure-btn {
+            background-color: #facc15;
+            color: #000;
+            font-weight: 900;
+            padding: 1.25rem 2.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .configure-btn:hover {
+            background-color: #eab308;
+            transform: scale(1.05);
+        }
+
+        .lamborghini-title {
+            line-height: 0.85;
+        }
+
+        .italic-caps {
+            font-style: italic;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark antialiased">
+    <!-- Header/Logo area -->
+    <header
+        class="fixed top-0 w-full z-50 px-8 py-8 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent">
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png"
+                alt="Lamborghini" class="h-10">
+        </div>
+        <nav class="hidden md:flex items-center gap-12">
+            <a class="text-xs font-bold tracking-[0.2em] text-white/70 hover:text-white transition-colors"
+                href="#">MODELS</a>
+        </nav>
+    </header>
+
+    <main class="relative h-screen flex flex-col justify-center px-12 pt-20">
+        <!-- Content Layer -->
+        <div class="z-10 flex flex-col h-full justify-between pb-12 pt-16">
+            <!-- Top Content -->
+            <div class="flex flex-col gap-10">
+                <div>
+                    <h1 class="lamborghini-title flex flex-col">
+                        <span
+                            class="text-5xl md:text-8xl font-black tracking-tighter text-white italic-caps">Aventador</span>
+                        <span
+                            class="text-5xl md:text-8xl font-black tracking-tighter text-lamborghini-yellow italic-caps">SVJ</span>
+                    </h1>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex gap-16 mt-4">
+                    <div class="flex flex-col">
+                        <span class="stats-value">2.8</span>
+                        <span class="stats-label">0-100 KM/H</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="stats-value">357</span>
+                        <span class="stats-label">TOP SPEED</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="stats-value">770</span>
+                        <span class="stats-label">HORSEPOWER</span>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mt-8">
+                    <p class="description-label mb-3">Description</p>
+                    <p class="description-text">
+                        The Lamborghini Aventador SVJ represents the pinnacle of Italian supercar engineering.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Content -->
+            <div class="flex justify-between items-end">
+                <div class="flex flex-col">
+                    <span class="price-label mb-2">Starting At</span>
+                    <span class="price-value">517,770</span>
+                </div>
+                <div>
+                    <button class="configure-btn">Configure</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Car Image Layer -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            <img src="assets/lamborghini_svj.png" alt="Lamborghini Aventador SVJ"
+                class="w-full max-w-[1300px] h-auto object-contain transform translate-y-16">
+        </div>
+    </main>
+
+    <!-- Navigation Overlay (Back Button) -->
+    <a href="portfolio.html"
+        class="fixed top-8 right-8 z-50 text-white/50 hover:text-white transition-all flex items-center gap-2 bg-white/5 p-3 rounded-full backdrop-blur-md">
+        <span class="material-symbols-outlined text-lg">close</span>
+    </a>
+
+</body>
+
+</html>
